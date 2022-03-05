@@ -12,8 +12,6 @@ jobs:
     steps:
     - name: Checkout reposistory
       uses: actions/checkout@v2
-      with:
-        ref: 'release'
     - name: Get Submodule
       run: |
         git submodule init
