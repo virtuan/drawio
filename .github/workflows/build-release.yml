@@ -2,8 +2,8 @@ name: Build & Release
 
 on:
   push:
-    paths:
-      - VERSION
+    tags:
+      - v*
       
 jobs:
   build:
