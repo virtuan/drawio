@@ -10,7 +10,7 @@ RUN apt-get update -y && \
 
 COPY . .
 
-RUN cd /tmp/drawio/etc/build/ && \
+RUN cd etc/build/ && \
     ant war
 
 FROM tomcat:10.0.12-jre11-temurin
