@@ -1,0 +1,23 @@
+name: virtuan-dgrap
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: build and deploy
+      uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+          image: virtuan/dgrap
+          tags: virtuan-studio-$GITHUB_RUN_ID
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
