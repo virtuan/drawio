@@ -44,6 +44,8 @@ RUN mkdir -p $CATALINA_HOME/webapps/draw && \
 
 # Copy docker-entrypoint
 COPY --from=build docker-entrypoint.sh /
+COPY --from=build PreConfig.js  $CATALINA_HOME/webapps/draw/js/
+COPY --from=build PostConfig.js $CATALINA_HOME/webapps/draw/js/
 RUN chmod +x /docker-entrypoint.sh
 
 WORKDIR $CATALINA_HOME
