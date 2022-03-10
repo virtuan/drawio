@@ -43,7 +43,7 @@ RUN mkdir -p $CATALINA_HOME/webapps/draw && \
         conf/server.xml
 
 # Copy docker-entrypoint
-COPY docker-entrypoint.sh /
+COPY --from=build docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 
 WORKDIR $CATALINA_HOME
