@@ -27,7 +27,7 @@ RUN apt-get update -y && \
     apt-get clean && \
     rm -r /var/lib/apt/lists/*
 
-COPY --from=build /tmp/drawio/build/draw.war /tmp
+COPY --from=build build/draw.war /tmp
 
 # Extract draw.io war & Update server.xml to set Draw.io webapp to root
 RUN mkdir -p $CATALINA_HOME/webapps/draw && \
