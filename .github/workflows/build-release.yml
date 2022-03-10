@@ -3,7 +3,7 @@ name: Build & Release
 on:
   push:
     paths:
-      - VERSION
+      - VERSION1
       
 jobs:
   build:
