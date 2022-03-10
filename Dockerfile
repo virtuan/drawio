@@ -8,9 +8,9 @@ RUN apt-get update -y && \
         ant \
         git
 
-RUN cd /tmp && \
-    git clone --depth 1 https://github.com/jgraph/drawio.git && \
-    cd /tmp/drawio/etc/build/ && \
+COPY . .
+
+RUN cd /tmp/drawio/etc/build/ && \
     ant war
 
 FROM tomcat:10.0.12-jre11-temurin
